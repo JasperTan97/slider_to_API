@@ -1,0 +1,50 @@
+{
+  "name": "slider",
+  "privileged": true,
+  "remoteUser": "ros2",
+  "build": {
+      "dockerfile": "../Dockerfile",
+      "context": "..",
+      "args": {
+          "ROS2_VERSION": "iron"
+          // "CL_VERSION": "v7.2.0",
+          // "NETIF_VERSION": "v2.0.1"
+      }
+  },
+  // "initializeCommand": [
+  //   "docker",
+  //   "build",
+  //   "--file=Dockerfile",
+  //   "--ssh=default",
+  //   "--build-arg=ROS2_VERSION=iron",
+  //   "--build-arg=CL_VERSION=v7.2.0",
+  //   "--build-arg=MODULO_VERSION=v3.1.0",
+  //   "--tag=slider",
+  //   ".."
+// ],
+//   "image": "slider",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/home/ros2/.devcontainer,type=bind,consistency=cached",
+  "workspaceFolder": "/home/ros2/.devcontainer",
+  "mounts": [
+      "source=/tmp/.X11-unix,target=/tmp/.X11-unix,type=bind,consistency=cached",
+      "source=/dev/dri,target=/dev/dri,type=bind,consistency=cached"
+  ],
+  "containerEnv": {
+      "DISPLAY": "unix:0"
+  },
+  "customizations": {
+      "vscode": {
+          "extensions": [
+              "eamodio.gitlens",
+              "ms-python.pylint",
+              "ms-python.autopep8",
+              "ms-python.isort"
+          ]
+      }
+  },
+  "runArgs": [
+      "--net=host",
+      "-e",
+      "DISPLAY=${localEnv:DISPLAY}"
+  ]
+}
