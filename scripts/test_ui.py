@@ -18,14 +18,14 @@ class Slider(tk.Tk):
         self.title("Slider UI")
 
         # Create and configure the first slider
-        self.slider1 = tk.Scale(self, from_=0, to=100, orient=tk.HORIZONTAL, label="Slider 1", length=300)
+        self.slider1 = tk.Scale(self, from_=0.0, to=3.0, orient=tk.HORIZONTAL, label="Slider 1", length=300, resolution=0.1)
         self.slider1.pack(pady=10)
-        self.slider1.set(50)  # Set an initial value
+        self.slider1.set(0.5)  # Set an initial value
 
         # Create and configure the second slider
-        self.slider2 = tk.Scale(self, from_=0, to=100, orient=tk.HORIZONTAL, label="Slider 2", length=300)
+        self.slider2 = tk.Scale(self, from_=0.0, to=3.0, orient=tk.HORIZONTAL, label="Slider 2", length=300, resolution=0.1)
         self.slider2.pack(pady=10)
-        self.slider2.set(75)  # Set an initial value
+        self.slider2.set(0.5)  # Set an initial value
 
         # Create a button to trigger the update function
         self.update_button = tk.Button(self, text="Update Values", command=self.update_values)
