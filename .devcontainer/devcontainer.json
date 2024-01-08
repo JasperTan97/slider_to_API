@@ -7,22 +7,8 @@
       "context": "..",
       "args": {
           "ROS2_VERSION": "iron"
-          // "CL_VERSION": "v7.2.0",
-          // "NETIF_VERSION": "v2.0.1"
       }
   },
-  // "initializeCommand": [
-  //   "docker",
-  //   "build",
-  //   "--file=Dockerfile",
-  //   "--ssh=default",
-  //   "--build-arg=ROS2_VERSION=iron",
-  //   "--build-arg=CL_VERSION=v7.2.0",
-  //   "--build-arg=MODULO_VERSION=v3.1.0",
-  //   "--tag=slider",
-  //   ".."
-// ],
-//   "image": "slider",
   "workspaceMount": "source=${localWorkspaceFolder},target=/home/ros2/.devcontainer,type=bind,consistency=cached",
   "workspaceFolder": "/home/ros2/.devcontainer",
   "mounts": [
