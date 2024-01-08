@@ -16,6 +16,6 @@ RUN sudo apt-get update && sudo apt-get install -y \
   && sudo ldconfig \
   && sudo rm -rf /var/lib/apt/lists/*
 
-RUN mkdir -p ${HOME} && cd ${HOME} && git clone https://github.com/aica-technology/api.git
+# RUN mkdir -p ${HOME} && cd ${HOME} && git clone https://github.com/aica-technology/api.git
 
-# RUN pip install aica-api
+RUN pip install aica-api
