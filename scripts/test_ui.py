@@ -5,7 +5,6 @@ from aica_api.client import AICA
 
 class Slider(tk.Tk):
     def __init__(self, *args, **kwargs):
-        # root window
         super().__init__(*args, **kwargs)
 
         self.aica = AICA('127.0.0.1')
@@ -13,25 +12,19 @@ class Slider(tk.Tk):
         print(self.aica.get_application())
         print(self.aica.controller_descriptions())
 
-        # Create the main Tkinter window
-        # root = tk.Tk()
         self.title("Slider UI")
 
-        # Create and configure the first slider
         self.slider1 = tk.Scale(self, from_=0.0, to=3.0, orient=tk.HORIZONTAL, label="Slider 1", length=300, resolution=0.1)
         self.slider1.pack(pady=10)
-        self.slider1.set(0.5)  # Set an initial value
+        self.slider1.set(0.5) 
 
-        # Create and configure the second slider
         self.slider2 = tk.Scale(self, from_=0.0, to=3.0, orient=tk.HORIZONTAL, label="Slider 2", length=300, resolution=0.1)
         self.slider2.pack(pady=10)
-        self.slider2.set(0.5)  # Set an initial value
+        self.slider2.set(0.5) 
 
-        # Create a button to trigger the update function
         self.update_button = tk.Button(self, text="Update Values", command=self.update_values)
         self.update_button.pack(pady=10)
 
-        # Create a label to display the current values
         self.label_result = tk.Label(self, text="")
         self.label_result.pack(pady=10)
 
